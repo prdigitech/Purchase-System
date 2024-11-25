@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Dashboard from './components/Dashboard';
+import NewRequisition from './components/NewRequisition';
+import './styles/style.css'; // Adjust path based on where you save it
 
-function App() {
+const App = () => {
+  const [activePage, setActivePage] = useState('dashboard');
+
+  const navigateTo = (pageId) => {
+    setActivePage(pageId);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <Sidebar activePage={activePage} onNavigate={navigateTo} />
+      <main id="mainContent">
+        {activePage === 'dashboard' && <Dashboard />}
+        {activePage === 'newRequisition' && <NewRequisition />}
+      </main>
     </div>
   );
-}
+};
 
 export default App;

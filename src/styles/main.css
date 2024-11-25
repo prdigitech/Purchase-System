@@ -1,0 +1,67 @@
+/* Apply Roboto Font Globally */
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6; /* Improves readability */
+    background-color: #f9f9f9; /* Light background for better contrast */
+    color: #333; /* Neutral text color */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Typography Styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700; /* Bold headings */
+    margin-bottom: 1rem;
+    color: #222; /* Slightly darker for headers */
+  }
+  
+  p {
+    font-weight: 400; /* Regular weight for body text */
+    margin-bottom: 1rem;
+    line-height: 1.8; /* Add more line height for paragraphs */
+  }
+  
+  a {
+    font-weight: 500; /* Medium weight for links */
+    color: #007bff; /* Link color */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Button Styles */
+  button {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Typography */
+  html {
+    font-size: 16px; /* Default font size */
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px; /* Smaller font size for small screens */
+    }
+  }
+  
+
+
