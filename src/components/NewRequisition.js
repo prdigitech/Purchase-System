@@ -103,6 +103,7 @@ const RequisitionForm = ({ onSubmit }) => {
 
   return (
     <form id="dynamicForm" onSubmit={handleSubmit}>
+      <h2>Create New Requisition:</h2>
       <label htmlFor="title">Requisition Title:</label>
       <input
         type="text"
@@ -183,6 +184,7 @@ const ItemForm = ({ onSubmit }) => {
 
   return (
     <form id="itemForm" onSubmit={handleSubmit}>
+      <h2>Add Items:</h2>
       <label htmlFor="description">Item Description:</label>
       <input
         type="text"
