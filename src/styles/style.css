@@ -232,107 +232,104 @@ body {
   }
   
   /*New Requisition Page */
-
-/* Page title */
-#newRequisitionPage h1 {
-  text-align: left;
-  font-family: 'Arial', sans-serif;
-  margin: 20px 0;
-  color: #333;
-}
-
-/* Form container styling */
-#dynamicForm,
-#itemForm {
-  background: #ffffff;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 1120px;
-  max-height: 600px;
-  width: 100%;
-  margin: 20px auto;
+/* Page Styling */
+#newRequisitionPage {
   font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-#dynamicForm label,
-#itemForm label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 8px;
-  color: #333;
+#newRequisitionPage h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-#dynamicForm input[type="text"],
-#dynamicForm input[type="date"],
-#dynamicForm select,
-#itemForm input[type="text"],
-#itemForm input[type="number"],
-#itemForm textarea,
-#itemForm select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-#dynamicForm input:focus,
-#dynamicForm select:focus,
-#itemForm input:focus,
-#itemForm select:focus,
-#itemForm textarea:focus {
-  border-color: #007BFF;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-#dynamicForm button,
-#itemForm button {
-  background-color: #007BFF;
+button {
+  background-color: #007bff;
   color: white;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  width: 100%;
 }
 
-#dynamicForm button:hover,
-#itemForm button:hover {
+button:hover {
   background-color: #0056b3;
 }
 
-/* Display styles for tables */
-#requisitionDisplay,
-#itemDisplay {
-  margin: 20px auto;
-  width: 100%;
-  max-width: 1120px;
+/* Form Styling */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
-#requisitionTable,
-#itemTable {
+form h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actionButtons button {
+  padding: 10px;
+}
+
+/* Table Styling */
+#reviewSection {
+  margin-top: 30px;
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
-#requisitionTable th,
-#requisitionTable td,
-#itemTable th,
-#itemTable td {
+table th,
+table td {
   padding: 10px;
-  border: 1px solid #ccc;
   text-align: left;
+  border: 1px solid #ddd;
 }
 
-#requisitionTable th,
-#itemTable th {
-  background-color: #007BFF;
-  color: white;
+table th {
+  background-color: #f4f4f4;
 }
+
 
 
 /* Media Queries */
