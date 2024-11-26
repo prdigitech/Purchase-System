@@ -231,22 +231,54 @@ body {
     font-size: 16px;
   }
   
-  /*New Requisition Page */
-/* Page Styling */
-#newRequisitionPage {
+/* New Requisition Page */
+
+/* Multi-Step Form Styling */
+#multiStepForm {
   font-family: Arial, sans-serif;
   padding: 20px;
 }
 
-#newRequisitionPage h1 {
+#multiStepForm h1 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.buttonGroup {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+.formStep {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.formStep h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.fileAttachment {
   margin-bottom: 20px;
 }
 
@@ -263,71 +295,14 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Form Styling */
-form {
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-form h2 {
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.actionButtons {
+.navigationButtons {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.actionButtons button {
-  padding: 10px;
-}
-
-/* Table Styling */
-#reviewSection {
-  margin-top: 30px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
-table th,
-table td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-table th {
-  background-color: #f4f4f4;
+.navigationButtons button {
+  padding: 10px 15px;
 }
 
 
