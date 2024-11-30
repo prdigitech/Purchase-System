@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/style.css'; // Ensure the styles match your current app design
+import '../styles/style.css';
 
 const RFQ = () => {
   const [rfqData, setRfqData] = useState({

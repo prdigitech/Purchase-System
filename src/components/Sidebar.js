@@ -44,6 +44,7 @@ const Sidebar = ({ activePage, onNavigate }) => {
           {[
             { id: 'dashboard', label: 'Dashboard' },
             { id: 'newRequisition', label: 'New Requisition' },
+            { id: 'RFQ', label: 'Request For Quotation (RFQ)' },
             { id: 'createPO', label: 'Create PO' },
             { id: 'approvePO', label: 'Approve PO' },
           ].map((page) => (
