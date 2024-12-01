@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
-import '../styles/style.css'; // Ensure the styles match your current app design
+import '../styles/style.css';
 
-const RFQ = () => {
-  const [rfqData, setRfqData] = useState({
-    requisitionId: '',
-    vendors: [],
+const NewRequisition = () => {
+  const [step, setStep] = useState(1); // Track current step
+  const [requisitionData, setRequisitionData] = useState({
+    title: '',
+    department: '',
+    requisitionDate: '',
+    requiredByDate: '',
+    urgencyLevel: 'Low',
     items: [],
-    notes: '',
+    remarks: '',
   });
-
-  const [currentVendor, setCurrentVendor] = useState('');
   const [currentItem, setCurrentItem] = useState({
     description: '',
     quantity: '',
     unit: '',
     priority: 'Low',
+    notes: '',
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setRfqData((prevData) => ({
+    setRequisitionData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
@@ -33,8 +36,8 @@ const RFQ = () => {
     }));
   };
 
-  const addItem = () => {
-    setRfqData((prevData) => ({
+  const handleAddItem = () => {
+    setRequisitionData((prevData) => ({
       ...prevData,
       items: [...prevData.items, currentItem],
     }));
@@ -43,125 +46,175 @@ const RFQ = () => {
       quantity: '',
       unit: '',
       priority: 'Low',
+      notes: '',
     });
   };
 
-  const addVendor = () => {
-    setRfqData((prevData) => ({
-      ...prevData,
-      vendors: [...prevData.vendors, currentVendor],
-    }));
-    setCurrentVendor('');
-  };
+  const handleNext = () => setStep((prevStep) => prevStep + 1);
+  const handleBack = () => setStep((prevStep) => prevStep - 1);
 
   const handleSubmit = () => {
-    alert('RFQ Created Successfully!');
-    console.log(rfqData); // Simulate submission
-    setRfqData({
-      requisitionId: '',
-      vendors: [],
+    alert('Requisition Submitted Successfully!');
+    console.log(requisitionData); // Simulate submission
+    setStep(1); // Reset form
+    setRequisitionData({
+      title: '',
+      department: '',
+      requisitionDate: '',
+      requiredByDate: '',
+      urgencyLevel: 'Low',
       items: [],
-      notes: '',
+      remarks: '',
     });
   };
 
   return (
     <div id="multiStepForm">
-      <h1>Request for Quotation (RFQ)</h1>
-      <div className="formStep">
-        <h2>Create RFQ</h2>
+      <h1>New Requisition</h1>
 
-        {/* Link to Requisition */}
-        <label htmlFor="requisitionId">Requisition ID:</label>
-        <input
-          id="requisitionId"
-          type="text"
-          name="requisitionId"
-          value={rfqData.requisitionId}
-          onChange={handleChange}
-        />
+      {/* Step 1: Requisition Details */}
+      {step === 1 && (
+        <div className="formStep">
+          <h2>Step 1: Requisition Details</h2>
+          <label htmlFor="title">Title:</label>
+          <input
+            id="title"
+            type="text"
+            name="title"
+            value={requisitionData.title}
+            onChange={handleChange}
+          />
+          <label htmlFor="department">Department:</label>
+          <input
+            id="department"
+            type="text"
+            name="department"
+            value={requisitionData.department}
+            onChange={handleChange}
+          />
+          <label htmlFor="requisitionDate">Requisition Date:</label>
+          <input
+            id="requisitionDate"
+            type="date"
+            name="requisitionDate"
+            value={requisitionData.requisitionDate}
+            onChange={handleChange}
+          />
+          <label htmlFor="requiredByDate">Required By Date:</label>
+          <input
+            id="requiredByDate"
+            type="date"
+            name="requiredByDate"
+            value={requisitionData.requiredByDate}
+            onChange={handleChange}
+          />
+          <label htmlFor="urgencyLevel">Urgency Level:</label>
+          <select
+            id="urgencyLevel"
+            name="urgencyLevel"
+            value={requisitionData.urgencyLevel}
+            onChange={handleChange}
+          >
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <div className="navigationButtons">
+            <button onClick={handleNext}>Next</button>
+          </div>
+        </div>
+      )}
 
-        {/* Add Vendors */}
-        <label htmlFor="vendor">Add Vendor:</label>
-        <input
-          id="vendor"
-          type="text"
-          name="vendor"
-          value={currentVendor}
-          onChange={(e) => setCurrentVendor(e.target.value)}
-        />
-        <button type="button" onClick={addVendor}>
-          Add Vendor
-        </button>
-        <ul>
-          {rfqData.vendors.map((vendor, index) => (
-            <li key={index}>{vendor}</li>
-          ))}
-        </ul>
+      {/* Step 2: Add Items */}
+      {step === 2 && (
+        <div className="formStep">
+          <h2>Step 2: Add Items</h2>
+          <label htmlFor="description">Item Description:</label>
+          <input
+            id="description"
+            type="text"
+            name="description"
+            value={currentItem.description}
+            onChange={handleItemChange}
+          />
+          <label htmlFor="quantity">Quantity:</label>
+          <input
+            id="quantity"
+            type="number"
+            name="quantity"
+            value={currentItem.quantity}
+            onChange={handleItemChange}
+          />
+          <label htmlFor="unit">Unit of Measure:</label>
+          <input
+            id="unit"
+            type="text"
+            name="unit"
+            value={currentItem.unit}
+            onChange={handleItemChange}
+          />
+          <label htmlFor="priority">Priority:</label>
+          <select
+            id="priority"
+            name="priority"
+            value={currentItem.priority}
+            onChange={handleItemChange}
+          >
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <label htmlFor="notes">Notes:</label>
+          <textarea
+            id="notes"
+            name="notes"
+            value={currentItem.notes}
+            onChange={handleItemChange}
+          ></textarea>
+          <button type="button" onClick={handleAddItem}>
+            Add Item
+          </button>
 
-        {/* Add Items */}
-        <label htmlFor="description">Item Description:</label>
-        <input
-          id="description"
-          type="text"
-          name="description"
-          value={currentItem.description}
-          onChange={handleItemChange}
-        />
-        <label htmlFor="quantity">Quantity:</label>
-        <input
-          id="quantity"
-          type="number"
-          name="quantity"
-          value={currentItem.quantity}
-          onChange={handleItemChange}
-        />
-        <label htmlFor="unit">Unit:</label>
-        <input
-          id="unit"
-          type="text"
-          name="unit"
-          value={currentItem.unit}
-          onChange={handleItemChange}
-        />
-        <label htmlFor="priority">Priority:</label>
-        <select
-          id="priority"
-          name="priority"
-          value={currentItem.priority}
-          onChange={handleItemChange}
-        >
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
-        <button type="button" onClick={addItem}>
-          Add Item
-        </button>
-        <ul>
-          {rfqData.items.map((item, index) => (
-            <li key={index}>
-              {item.description} - {item.quantity} {item.unit} ({item.priority})
-            </li>
-          ))}
-        </ul>
+          <h3>Items List</h3>
+          <ul>
+            {requisitionData.items.map((item, index) => (
+              <li key={index}>
+                {item.description} - {item.quantity} {item.unit} ({item.priority})
+              </li>
+            ))}
+          </ul>
 
-        {/* Notes Section */}
-        <label htmlFor="notes">Additional Notes:</label>
-        <textarea
-          id="notes"
-          name="notes"
-          value={rfqData.notes}
-          onChange={handleChange}
-        ></textarea>
+          <div className="navigationButtons">
+            <button onClick={handleBack}>Back</button>
+            <button onClick={handleNext}>Next</button>
+          </div>
+        </div>
+      )}
 
-        {/* Submit */}
-        <button type="button" onClick={handleSubmit}>
-          Submit RFQ
-        </button>
-      </div>
+      {/* Step 3: Submission and Review */}
+      {step === 3 && (
+        <div className="formStep">
+          <h2>Step 3: Submission and Review</h2>
+          <label htmlFor="remarks">Remarks:</label>
+          <textarea
+            id="remarks"
+            name="remarks"
+            value={requisitionData.remarks}
+            onChange={handleChange}
+          ></textarea>
+          <div className="fileAttachment">
+            <label htmlFor="file">Attach Files:</label>
+            <input type="file" id="file" name="file" />
+          </div>
+
+          <div className="navigationButtons">
+            <button onClick={handleBack}>Back</button>
+            <button onClick={handleSubmit}>Submit</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default RFQ;
+export default NewRequisition;
