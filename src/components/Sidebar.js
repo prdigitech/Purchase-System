@@ -44,9 +44,12 @@ const Sidebar = ({ activePage, onNavigate }) => {
           {[
             { id: 'dashboard', label: 'Dashboard' },
             { id: 'newRequisition', label: 'New Requisition' },
+            { id: 'myRequisitions', label: 'My Requisitions' }, // New Tab
+            { id: 'allRequisitions', label: 'All Requisitions' }, // New Tab
             { id: 'RFQ', label: 'Request For Quotation (RFQ)' },
             { id: 'createPO', label: 'Create PO' },
             { id: 'approvePO', label: 'Approve PO' },
+            { id: 'vendorDirectory', label: 'Vendor Directory' }, // New Feature
           ].map((page) => (
             <button
               key={page.id}

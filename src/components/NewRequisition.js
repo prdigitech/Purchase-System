@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import '../styles/style.css';
 
 const NewRequisition = () => {
-  const [step, setStep] = useState(1); // Track current step
+  const [step, setStep] = useState(1);
   const [requisitionData, setRequisitionData] = useState({
     title: '',
     department: '',
+    siteName: '', // New field
+    city: '', // New field
     requisitionDate: '',
     requiredByDate: '',
     urgencyLevel: 'Low',
     items: [],
     remarks: '',
+    employeeName: '', // New field
+    signature: null, // New field
   });
   const [currentItem, setCurrentItem] = useState({
     description: '',
@@ -25,6 +29,13 @@ const NewRequisition = () => {
     setRequisitionData((prevData) => ({
       ...prevData,
       [name]: value,
+    }));
+  };
+
+  const handleFileChange = (e) => {
+    setRequisitionData((prevData) => ({
+      ...prevData,
+      signature: e.target.files[0],
     }));
   };
 
@@ -56,15 +67,19 @@ const NewRequisition = () => {
   const handleSubmit = () => {
     alert('Requisition Submitted Successfully!');
     console.log(requisitionData); // Simulate submission
-    setStep(1); // Reset form
+    setStep(1);
     setRequisitionData({
       title: '',
       department: '',
+      siteName: '',
+      city: '',
       requisitionDate: '',
       requiredByDate: '',
       urgencyLevel: 'Low',
       items: [],
       remarks: '',
+      employeeName: '',
+      signature: null,
     });
   };
 
@@ -90,6 +105,22 @@ const NewRequisition = () => {
             type="text"
             name="department"
             value={requisitionData.department}
+            onChange={handleChange}
+          />
+          <label htmlFor="siteName">Site/Project Name:</label> {/* New Field */}
+          <input
+            id="siteName"
+            type="text"
+            name="siteName"
+            value={requisitionData.siteName}
+            onChange={handleChange}
+          />
+          <label htmlFor="city">City:</label> {/* New Field */}
+          <input
+            id="city"
+            type="text"
+            name="city"
+            value={requisitionData.city}
             onChange={handleChange}
           />
           <label htmlFor="requisitionDate">Requisition Date:</label>
@@ -195,18 +226,18 @@ const NewRequisition = () => {
       {step === 3 && (
         <div className="formStep">
           <h2>Step 3: Submission and Review</h2>
-          <label htmlFor="remarks">Remarks:</label>
-          <textarea
-            id="remarks"
-            name="remarks"
-            value={requisitionData.remarks}
+          <label htmlFor="employeeName">Employee Name:</label> {/* New Field */}
+          <input
+            id="employeeName"
+            type="text"
+            name="employeeName"
+            value={requisitionData.employeeName}
             onChange={handleChange}
-          ></textarea>
-          <div className="fileAttachment">
-            <label htmlFor="file">Attach Files:</label>
-            <input type="file" id="file" name="file" />
-          </div>
-
+          />
+          <label htmlFor="signature">Upload Digital Signature:</label> {/* New Field */}
+          <input type="file" id="signature" name="signature" onChange={handleFileChange} />
+          <h3>Review Your Requisition</h3>
+          <pre>{JSON.stringify(requisitionData, null, 2)}</pre>
           <div className="navigationButtons">
             <button onClick={handleBack}>Back</button>
             <button onClick={handleSubmit}>Submit</button>

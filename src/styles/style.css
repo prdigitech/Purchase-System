@@ -1,362 +1,12 @@
 /* General Styles */
 body {
-    font-family: "Roboto";
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /*Sidebar */
-  #sidebar {
-    width: 260px;
-    height: 200vh;
-    background: #ffffff;
-    color: #000000;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    border-right: solid;
-    border-color: #000000;
-    font-family: "Roboto";
-    border-width: 1px;
-  }
-  
-  #sidebar button {
-    background: none;
-    color: #000000;
-    border: none;
-    padding: 40px;
-    text-align: center;
-    cursor: pointer;
-    font-family: "Roboto";
-    transition: background 0.3s, color 0.3s; /* Smooth hover effect */
-  }
-  
-  #sidebar button:hover {
-    color: #2196f3;
-  }
-  
-  #sidebar button.active {
-    background: #2196f3; /* Light gray background */
-    color: #ffffff; /* Highlight color */
-    border: 1px solid #000000; /* Light gray border */
-    border-radius: 25px; /* Rounded corners */
-    padding: 11px; /* Adjusted padding for rounded corner look */
-  }
-  
-  #sidebarb {
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align the buttons */
-  }
-  
-  /*header */
-  #header {
-    height: 90px;
-    background: #ffffff;
-    color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    border-bottom: solid;
-    border-color: #000000;
-    border-width: 1px;
-  }
-  
-  #logoContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  #logo {
-    width: 200px;
-    height: 50px;
-    object-fit: contain;
-  }
-  
-  #headerTitle {
-    flex: 1;
-    text-align: center;
-  }
-  
-  #headerActions {
-    display: flex;
-    gap: 15px;
-  }
-  
-  #headerActions button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #headerActions img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-  }
-  
-  /*Dashboard */
-  #mainContent {
-    margin-left: 280px;
-    padding: 20px;
-    height: 100vh;
-  }
-  
-  #dashboard h2:hover{
-    color: #2196f3;
-    cursor: pointer;
-  }
-  
-  .page {
-    display: none;
-  }
-  
-  .page.hidden {
-    display: none;
-  }
-  
-  .page:not(.hidden) {
-    display: block;
-  }
-  
-  /*Card */
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 528px); /* Two columns of 528px each */
-    grid-template-rows: repeat(3, 250px); /* Two rows of 250px each */
-    gap: 40px; /* Space between cards */
-    justify-content: left; /* Centers the grid horizontally */
-    align-content: center; /* Centers the grid vertically */
-    
-  }
-  
-  .card {
-    background: #ffffff; /* White background */
-    width: 400px; /* Card width */
-    height: 250px; /* Card height */
-    border: 2px solid #000000; /* Solid black border */
-    box-sizing: border-box; /* Ensures padding/border don't exceed width/height */
-    padding: 20px; /* Inner spacing */
-    border-radius: 8px; /* Optional: slightly rounded corners */
-    text-align: center; /* Center-aligns content inside the card */
-    border-width: 1px;
-  }
-  
-  .card h2 {
-    margin-top: 0px;
-  }
-  
-  .card p {
-    text-align: left;
-    margin-left: 10px;
-  }
-  
-  
-  
-  
-  .cardb1{
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px;
-    cursor: pointer;
-    top: 20px;
-    margin-top: 30px;
-    margin-left: 80px;
-    margin-bottom: 5px;
-    border-radius: 25px;
-    font-size: 16px;
-    
-  }
-  
-  .cardb2 {
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px;
-    cursor: pointer;
-    top: 20px;
-    margin-top: 30px;
-    margin-left: 110px;
-    border-radius: 25px;
-    font-size: 16px;
-  }
-  
-  .cardb3 {
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px;
-    cursor: pointer;
-    top: 20px;
-    margin-top: 30px;
-    margin-left: 110px;
-    border-radius: 25px;
-    font-size: 16px;
-  }
-  
-  .cardb4 {
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px;
-    cursor: pointer;
-    top: 20px;
-    margin-top: 30px;
-    margin-left: 60px;
-    border-radius: 25px;
-    font-size: 16px;
-  }
-  
-  .cardb5 {
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px;
-    cursor: pointer;
-    top: 20px;
-    margin-top: 30px;
-    margin-left: 85px;
-    border-radius: 25px;
-    font-size: 16px;
-  }
-  
-  .cardb6 {
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px;
-    cursor: pointer;
-    top: 20px;
-    margin-top: 30px;
-    margin-left: 85px;
-    border-radius: 25px;
-    font-size: 16px;
-  }
-  
-/* New Requisition Page */
-
-/* Multi-Step Form Styling */
-#multiStepForm {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  font-family: "Roboto";
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-#multiStepForm h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.formStep {
-  max-width: 600px;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.formStep h2 {
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.fileAttachment {
-  margin-bottom: 20px;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.navigationButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.navigationButtons button {
-  padding: 10px 15px;
-}
-
-
-
-/* Media Queries */
-
-/* Media Queries for Header */
-@media (max-width: 768px) {
-  #header {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
-  }
-
-  #logo {
-    width: 150px;
-    height: 40px;
-  }
-
-  #headerTitle h1 {
-    font-size: 18px;
-  }
-
-  #headerActions {
-    gap: 10px;
-  }
-
-  #headerActions img {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-@media (max-width: 480px) {
-  #header {
-    text-align: center;
-  }
-
-  #logo {
-    width: 120px;
-    height: 30px;
-  }
-
-  #headerTitle h1 {
-    font-size: 16px;
-  }
-
-  #headerActions img {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-/* Default Sidebar Styles */
+/* Sidebar */
 #sidebar {
   width: 260px;
   height: 200vh;
@@ -410,24 +60,275 @@ button:hover {
   align-items: center;
 }
 
+/* Header */
+#header {
+  height: 90px;
+  background: #ffffff;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: solid 1px #000000;
+  position: relative;
+}
+
+#logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  width: 200px;
+  height: 50px;
+  object-fit: contain;
+}
+
+#headerTitle {
+  flex: 1;
+  text-align: center;
+}
+
+#headerActions {
+  display: flex;
+  gap: 15px;
+}
+
+#headerActions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#headerActions img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* Dashboard */
+#mainContent {
+  margin-left: 280px;
+  padding: 20px;
+  height: 100vh;
+}
+
+#dashboard h2:hover {
+  color: #2196f3;
+  cursor: pointer;
+}
+
+.page {
+  display: none;
+}
+
+.page.hidden {
+  display: none;
+}
+
+.page:not(.hidden) {
+  display: block;
+}
+
+/* Card */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 528px);
+  grid-template-rows: repeat(3, 250px);
+  gap: 50px;
+  justify-content: left;
+  align-content: center;
+}
+
+.card {
+  background: #ffffff;
+  width: 400px;
+  height: 250px;
+  border: 1px solid #000000;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  text-align: left;
+  margin-left: 10px;
+}
+
+/* Card Buttons */
+.cardb1, .cardb2, .cardb3, .cardb4, .cardb5, .cardb6 {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+.cardb1 {
+  margin-left: 80px;
+}
+
+.cardb2 {
+  margin-left: 110px;
+}
+
+.cardb3 {
+  margin-left: 110px;
+}
+
+.cardb4 {
+  margin-left: 60px;
+}
+
+.cardb5, .cardb6 {
+  margin-left: 85px;
+}
+
+/* New Requisition Page */
+
+/* Multi-Step Form Styling */
+#multiStepForm {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#multiStepForm h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formStep {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.formStep h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.fileAttachment {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navigationButtons button {
+  padding: 10px 15px;
+}
+
 /* Burger Menu Button */
 #burgerMenu {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 105px;
-  left: 200px;
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
   background: none;
   border: solid;
   border-width: 1px;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   z-index: 1000;
 }
 
-/* Media Queries for Small Screens */
+/* Media Queries */
+
+/* Header */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  #logo {
+    width: 150px;
+    height: 40px;
+  }
+
+  #headerTitle h1 {
+    font-size: 18px;
+  }
+
+  #headerActions {
+    gap: 10px;
+  }
+
+  #headerActions img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  #header {
+    text-align: center;
+  }
+
+  #logo {
+    width: 120px;
+    height: 30px;
+  }
+
+  #headerTitle h1 {
+    font-size: 16px;
+  }
+
+  #headerActions img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Sidebar */
 @media (max-width: 768px) {
   #burgerMenu {
-    display: block; /* Show burger button on small screens */
+    display: block;
     color: #000000;
   }
 
@@ -438,7 +339,7 @@ button:hover {
     height: 100vh;
     z-index: 999;
     width: 200px;
-    transform: translateX(-260px); /* Hidden by default on small screens */
+    transform: translateX(-260px);
     transition: transform 0.3s ease-in-out;
   }
 
@@ -447,12 +348,12 @@ button:hover {
   }
 
   #sidebar button {
-    padding: 30px;
+    padding: 20px;
     font-size: 14px;
   }
 
   #sidebar button.active {
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 8px;
   }
 }
@@ -473,53 +374,50 @@ button:hover {
   }
 }
 
-
-
-
-/* Media Queries for Dashboard */
+/* Dashboard */
 @media (max-width: 1024px) {
   .card-container {
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 30px; /* Reduced gap */
-    justify-content: center; /* Center align grid horizontally */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
   }
 
   .card {
-    width: 350px; /* Adjusted card width */
-    height: 220px; /* Adjusted card height */
-  }
-
-  .card p {
-    font-size: 14px; /* Smaller font size */
-  }
-
-  .card button {
-    font-size: 14px; /* Adjust button font size */
-  }
-}
-
-@media (max-width: 768px) {
-  .card-container {
-    grid-template-columns: 1fr; /* Single column */
-    gap: 20px; /* Smaller gap */
-  }
-
-  .card {
-    width: 100%; /* Full width */
-    height: auto; /* Auto height for flexibility */
-    padding: 15px; /* Reduced padding */
+    width: 320px;
+    margin: 0 auto;
   }
 
   .card h2 {
-    font-size: 18px; /* Smaller heading */
+    font-size: 18px;
   }
 
   .card p {
-    font-size: 12px; /* Adjusted font size */
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
-  .card button {
-    font-size: 12px; /* Adjust button font size */
-    padding: 8px 15px; /* Adjusted button padding */
+  .card {
+    width: 300px;
+    margin-right: 80px;
+    margin-left: 20px;
+  }
+
+  .card h2 {
+    font-size: 16px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+
+  .cardb1, .cardb2, .cardb3, .cardb4, .cardb5, .cardb6 {
+    padding: 6px 12px;
+    font-size: 10px;
   }
 }
